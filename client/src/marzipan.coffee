@@ -145,6 +145,8 @@ root.marzipan = do (settings) ->
       logPageview: logPageview
       tagNewUser: tagNewUser
       checkUser: checkUser
+      config: config
+      utils: utils
     }  
     
   

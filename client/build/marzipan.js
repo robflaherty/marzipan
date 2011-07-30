@@ -112,7 +112,9 @@
       return {
         logPageview: logPageview,
         tagNewUser: tagNewUser,
-        checkUser: checkUser
+        checkUser: checkUser,
+        config: config,
+        utils: utils
       };
     }
   })(settings);
