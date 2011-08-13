@@ -13,7 +13,7 @@ root.marzipan = do (settings) ->
   # Config takes data from global settings object
   config =
     site: settings.site
-    cookie: '_sbmVisitor'
+    cookie: '_marzipan'
     testing: settings.testing ? off
     
   # Utils: random number, cookie tool, uuid generator
@@ -99,7 +99,7 @@ root.marzipan = do (settings) ->
   # Generate beacon
   createBeacon = (query) ->
     img = new Image(1, 1)
-    img.src = 'image.gif?' + encodeURIComponent(query + '&req=' + utils.random())    
+    img.src = 'image.gif?' + query + '&req=' + utils.random()    
   
   #
   # Private variables

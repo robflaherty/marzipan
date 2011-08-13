@@ -5,7 +5,7 @@
     var checkUser, config, createBeacon, getCookie, logPageview, makeUUID, page, setCookie, tagNewUser, user, utils, _ref, _ref2;
     config = {
       site: settings.site,
-      cookie: '_sbmVisitor',
+      cookie: '_marzipan',
       testing: (_ref = settings.testing) != null ? _ref : false
     };
     utils = {
@@ -88,7 +88,7 @@
     createBeacon = function(query) {
       var img;
       img = new Image(1, 1);
-      return img.src = 'image.gif?' + encodeURIComponent(query + '&req=' + utils.random());
+      return img.src = 'image.gif?' + query + '&req=' + utils.random();
     };
     page = {
       title: document.title,
