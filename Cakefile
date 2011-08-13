@@ -10,3 +10,4 @@ task 'assets:watch', 'Watch source files and build JS & CSS', (options) ->
   runCommand 'coffee', '-wc', '-o', 'client/build/', 'client/src/'
   runCommand 'coffee', '-wc', 'client/test/unit/'
 
+  runCommand 'coffee', '-wc', '-o', 'server/build/', 'server/src/'
