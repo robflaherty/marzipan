@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Title</title>   
+</head>
+<body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+
+<div id="app">
+  <h1>Marzipan - Users</h1>
+  <ul>
+    
+  </ul>
+</div>
+
+<script type="text/tpl" id="main-tpl">
+ <li>
+  <h3>User: <strong><%= id %></strong> <span class="pv-count">Pageviews: <strong><%= pvs.length %></strong></span></h3>
+  <ul>
+    <% _.each(pvs, function(page) { %>  
+      <li><a href="<%= page.url %>"><%= page.title %></a></li>
+    <% }); %>      
+  </ul>
+ </li>  
+</script>
+
+<script>
+  $.getJSON('http://localhost:3333/data', function(data) {
+    
+    var template = $('#main-tpl').html();
+    var compiled = _.template(template);
+    var users = [];
+    
+    _.each(data.data, function(elem) {
+      var user = {};
+      user.id = elem.user;
+      user.pvs = [];
+      
+      _.each(elem.pageviews, function(pv){
+        var page = {};
+        page.title = pv[0].title;
+        page.url = pv[0].url;
+        user.pvs.push(page);
+      });
+            
+      users.push(compiled(user));
+    });
+        
+    $(function(){
+      $('#app ul').append(users.join(''));
+    });
+    
+  });
+</script>
+</body>
+</html>
