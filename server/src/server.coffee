@@ -25,12 +25,14 @@ pushCache = (data) ->
 
 # Function to flush the cache to mongo
 flushCache = () ->
+  console.log cache
   db = new mongo.Db('test', new mongo.Server('localhost', 27017, {}), {})
     
   db.open (err, client) ->
     client.collection "users", (err, col) ->
       for prop of cache
-        col.insert({user: prop, pageviews: cache[prop]}, () -> )
+        col.update( {user: prop}, {$push: { pageviews: cache[prop] }}, {upsert: true}, () -> )
+      cache = {}
       return
     return
   return

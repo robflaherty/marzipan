@@ -18,16 +18,23 @@
   };
   flushCache = function() {
     var db;
+    console.log(cache);
     db = new mongo.Db('test', new mongo.Server('localhost', 27017, {}), {});
     db.open(function(err, client) {
       client.collection("users", function(err, col) {
         var prop;
         for (prop in cache) {
-          col.insert({
-            user: prop,
-            pageviews: cache[prop]
+          col.update({
+            user: prop
+          }, {
+            $push: {
+              pageviews: cache[prop]
+            }
+          }, {
+            upsert: true
           }, function() {});
         }
+        cache = {};
       });
     });
   };

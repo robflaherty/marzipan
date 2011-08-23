@@ -14,6 +14,7 @@ root.marzipan = do (settings) ->
   config =
     site: settings.site
     cookie: '_marzipan'
+    pingURL: 'http://localhost:3000/image.gif'
     testing: settings.testing ? off
     
   # Utils: random number, cookie tool, uuid generator
@@ -99,7 +100,7 @@ root.marzipan = do (settings) ->
   # Generate beacon
   createBeacon = (query) ->
     img = new Image(1, 1)
-    img.src = 'image.gif?' + query + '&req=' + utils.random()    
+    img.src = config.pingURL + '?' + query + '&req=' + utils.random()    
   
   #
   # Private variables

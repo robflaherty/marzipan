@@ -6,6 +6,7 @@
     config = {
       site: settings.site,
       cookie: '_marzipan',
+      pingURL: 'http://localhost:3000/image.gif',
       testing: (_ref = settings.testing) != null ? _ref : false
     };
     utils = {
@@ -88,7 +89,7 @@
     createBeacon = function(query) {
       var img;
       img = new Image(1, 1);
-      return img.src = 'image.gif?' + query + '&req=' + utils.random();
+      return img.src = config.pingURL + '?' + query + '&req=' + utils.random();
     };
     page = {
       title: document.title,
