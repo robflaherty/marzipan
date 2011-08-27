@@ -1,8 +1,8 @@
-#
-# Marzipan
-# Copyright (c) 2011 Rob Flaherty (@robflaherty)
-# Dual licensed under the MIT and GPL licenses.
-#
+###
+Marzipan
+Copyright (c) 2011 Rob Flaherty (@robflaherty)
+Dual licensed under the MIT and GPL licenses.
+###
 
 # Define root object (window in browser)
 root = this

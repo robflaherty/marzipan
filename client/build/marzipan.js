@@ -1,5 +1,9 @@
 (function() {
-  var root;
+  /*
+  Marzipan
+  Copyright (c) 2011 Rob Flaherty (@robflaherty)
+  Dual licensed under the MIT and GPL licenses.
+  */  var root;
   root = this;
   root.marzipan = (function(settings) {
     var checkUser, config, createBeacon, getCookie, logPageview, makeUUID, page, setCookie, tagNewUser, user, utils, _ref, _ref2;
