@@ -1,5 +1,7 @@
 (function() {
-  var app, cache, config, dashboard, db, express, flushCache, mongo, pushCache, _;
+  /*
+  Marzipan
+  */  var app, cache, config, dashboard, db, express, flushCache, mongo, pushCache, _;
   express = require('express');
   config = require('./config/config');
   mongo = require('mongodb');
@@ -9,9 +11,12 @@
   cache = {};
   pushCache = function(data) {
     var user;
+    if (_.isEmpty(data)) {
+      return;
+    }
     user = data.user;
-    data.timestamp = Date.now() + '';
     delete data.user;
+    data.timestamp = Date.now() + '';
     if (!cache[user]) {
       cache[user] = [];
     }

@@ -1,3 +1,8 @@
+###
+Marzipan
+###
+
+# Require modules
 express = require 'express'
 config  = require './config/config'
 mongo   = require 'mongodb'
@@ -16,28 +21,44 @@ cache = {}
 
 # Push pageview into cache onto user key
 pushCache = (data) ->
-  user = data.user
-  data.timestamp = Date.now() + ''
   
+  # Return early if data is empty
+  return if _.isEmpty(data)
+  
+  # Pull user out of data
+  user = data.user
   delete data.user
   
+  # Add timestamp to data
+  data.timestamp = Date.now() + ''
+  
+  # Add user to the cache
   if (!cache[user])
     cache[user] = []
+  
+  # Push pageview data onto user key
   cache[user].push(data)
+  
   return
 
 # Flush the cache to mongo
 flushCache = () ->
+  
+  # Return early if the cache is empty
   return if _.isEmpty(cache)
   
+  # Save and reset cache
   data = cache
   cache = {}
+  
+  # Print data to console
   console.log data
-        
+  
+  # Save each pageview into database      
   db.open (err, client) ->
     client.collection "users", (err, col) ->
       for prop of data
-        col.update( {user: prop}, {$pushAll: { pageviews: data[prop] }}, {upsert: true}, () -> )
+        col.update( { user: prop }, { $pushAll: { pageviews: data[prop] } }, { upsert: true }, () -> )
       db.close()
       return
     return
