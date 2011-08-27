@@ -48,7 +48,7 @@
     pushCache(req.query);
     return res.send(204);
   });
-  setInterval(flushCache, 3000);
+  setInterval(flushCache, 5000);
   app.get('/js', function(req, res) {
     return res.sendfile(__dirname + '/client/marzipan.js');
   });

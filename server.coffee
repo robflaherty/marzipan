@@ -51,8 +51,8 @@ app.get '/ping', (req, res) ->
   pushCache(req.query)
   res.send(204)
 
-# Flush cache every 3 seconds
-setInterval(flushCache, 3000)
+# Flush cache every 5 seconds
+setInterval(flushCache, 5000)
 
 #
 # Tracking JS
