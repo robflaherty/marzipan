@@ -5,13 +5,13 @@
   Dual licensed under the MIT and GPL licenses.
   */  var root;
   root = this;
-  root.marzipan = (function(settings) {
+  root.marzipan = (function(marzipan_settings) {
     var checkUser, config, createBeacon, getCookie, logPageview, makeUUID, page, setCookie, tagNewUser, user, utils, _ref, _ref2;
     config = {
-      site: settings.site,
+      site: marzipan_settings.site,
       cookie: '_marzipan',
       pingURL: 'http://localhost:8000/ping',
-      testing: (_ref = settings.testing) != null ? _ref : false
+      testing: (_ref = marzipan_settings.testing) != null ? _ref : false
     };
     utils = {
       random: function() {
@@ -122,5 +122,5 @@
         utils: utils
       };
     }
-  })(settings);
+  })(marzipan_settings);
 }).call(this);

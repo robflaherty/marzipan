@@ -7,15 +7,15 @@ Dual licensed under the MIT and GPL licenses.
 # Define root object (window in browser)
 root = this
 
-# Marzipan module, import settings global
-root.marzipan = do (settings) ->
+# Marzipan module, import marzipan_settings global
+root.marzipan = do (marzipan_settings) ->
   
-  # Config takes data from global settings object
+  # Config takes data from global marzipan_settings object
   config =
-    site: settings.site
+    site: marzipan_settings.site
     cookie: '_marzipan'
     pingURL: 'http://localhost:8000/ping'
-    testing: settings.testing ? off
+    testing: marzipan_settings.testing ? off
     
   # Utils: random number, cookie tool, uuid generator
   utils =
