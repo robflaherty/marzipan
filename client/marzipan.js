@@ -98,7 +98,7 @@
     page = {
       title: document.title,
       url: window.location.href,
-      referrer: (_ref2 = location.referrer) != null ? _ref2 : false,
+      referrer: (_ref2 = document.referrer) != null ? _ref2 : false,
       site: config.site
     };
     user = {

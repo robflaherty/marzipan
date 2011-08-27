@@ -110,7 +110,7 @@ root.marzipan = do (marzipan_settings) ->
   page =
     title: document.title
     url: window.location.href
-    referrer: location.referrer ? no
+    referrer: document.referrer ? no
     site: config.site
   
   # User data  
