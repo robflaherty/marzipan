@@ -11,7 +11,8 @@ task 'assets:watch', 'Watch source files and build JS & CSS', (options) ->
   runCommand 'coffee', '-wc', 'client/test/unit/'
 
   runCommand 'coffee', '-wc', '-o', 'server/build/', 'server/src/'
-  
+  runCommand 'coffee', '-wc', 'server.coffee'
+ 
 task 'servers:boot', 'Boot servers', (options) ->
   runCommand = (name, args...) ->
     proc =           spawn name, args
