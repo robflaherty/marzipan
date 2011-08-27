@@ -10,7 +10,7 @@
     config = {
       site: settings.site,
       cookie: '_marzipan',
-      pingURL: 'http://localhost:3000/image.gif',
+      pingURL: 'http://localhost:8000/ping',
       testing: (_ref = settings.testing) != null ? _ref : false
     };
     utils = {

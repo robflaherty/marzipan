@@ -14,7 +14,7 @@ root.marzipan = do (settings) ->
   config =
     site: settings.site
     cookie: '_marzipan'
-    pingURL: 'http://localhost:3000/image.gif'
+    pingURL: 'http://localhost:8000/ping'
     testing: settings.testing ? off
     
   # Utils: random number, cookie tool, uuid generator
