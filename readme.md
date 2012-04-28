@@ -34,6 +34,9 @@ You also have to specify the location of the Marzipan script. :)
   <script src="marzipan.js" id="marzipan" data-marzipan-site="123" data-marzipan-ping="/ping.gif"></script>
 ```
 
+## Running Tests
+I'm using Jasmine for tests. Coverage is not complete yet but if you want to run what's there make sure to run on a local server. (Reading/writing cookies doesn't work for local files.)
+
 ## Contact
 * [Github page](https://github.com/robflaherty/marzipan)
 * Find me on Twitter at [@robflaherty](https://twitter.com/#!/robflaherty)
