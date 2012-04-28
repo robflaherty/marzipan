@@ -117,6 +117,10 @@
 
     // Get query string value
     querystring: function(key) {
+      /* 
+       * Need to replace this with better solution when we add
+       * query param tracking.
+       */
       var search = this.getQueryString(),
         qs = search.split('&'),
         len = qs.length,
