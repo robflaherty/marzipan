@@ -2,6 +2,16 @@
  * Marzipan | v0.2.0
  * Copyright (c) 2012 Rob Flaherty (@robflaherty)
  * Dual licensed under the MIT and GPL licenses.
+ *
+ * uuid()
+ * Copyright (c) 2010 Robert Kieffer
+ * Dual licensed under the MIT and GPL licenses.
+ * Documentation and details at https://github.com/broofa/node-uuid
+ * 
+ * cookie()
+ * (Plain JS port of jquery.cookie plugin)
+ * Copyright (c) 2010 Klaus Hartl (stilbuero.de)
+ * Dual licensed under the MIT and GPL licenses.
  */
 
 (function(window) {
