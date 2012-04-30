@@ -7,10 +7,12 @@ User activity tracking requires work on both the client and server. Currently Ma
 A future version will include an optional server side component as well.
 
 ### Client side config
-The client side implementation has two required settings:
+The client side implementation has one required setting:
 
-* **data-marzipan-site**: Site identifier
 * **data-marzipan-ping**: Ping URI
+
+Optionally you can specify an Id for the tracked site:
+* **data-marzipan-site**: Site identifier
 
 You also have to specify the location of the Marzipan script. :)
 
