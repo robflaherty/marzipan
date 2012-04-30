@@ -153,11 +153,11 @@
     // Track Pageview
     trackPageview: function() {
       var query = [];
-      query.push( encodeURIComponent('user=' + _marzipan.user) );
-      query.push( encodeURIComponent('url='  + _marzipan.url) );
+      query.push( 'user=' + encodeURIComponent(_marzipan.user) );
+      query.push( 'url='  + encodeURIComponent(_marzipan.url) );
 
       if (_marzipan.site) {
-        query.push( encodeURIComponent('site=' + _marzipan.site) );
+        query.push( 'site=' + encodeURIComponent(_marzipan.site) );
       }
 
       this.ping(query.join('&'));
